@@ -1,6 +1,6 @@
 class CreateDeckCards < ActiveRecord::Migration
   def change
-    create_table :decks_cards do |t|
+    create_table :deck_cards do |t|
       t.references :deck
       t.references :card
 
@@ -8,3 +8,4 @@ class CreateDeckCards < ActiveRecord::Migration
     end
   end
 end
+
