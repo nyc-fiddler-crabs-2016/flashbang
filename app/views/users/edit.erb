@@ -6,3 +6,8 @@
   <input type="text" name="user[email]" placeholder="email" value="<%= @user.email %>"><br /><br />
   <input type="submit" value="Submit">
 </form>
+
+<form method="POST" action="/users/<%= @user.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>
