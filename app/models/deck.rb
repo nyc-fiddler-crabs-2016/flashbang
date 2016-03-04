@@ -1,5 +1,5 @@
 class Deck < ActiveRecord::Base
-  validates :name, presense: true
+  # validates :name
 
   has_and_belongs_to_many :cards
   has_many :games
