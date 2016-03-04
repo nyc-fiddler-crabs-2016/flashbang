@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true
+  validates :password, length: { minimum: 4, maximum: 20 }
 
   has_many :games
   has_many :decks, through: :games

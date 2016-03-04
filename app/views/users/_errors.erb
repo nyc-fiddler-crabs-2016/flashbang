@@ -1,0 +1,5 @@
+<% if @errors %>
+  <% @errors.each do |error| %>
+    <%= "<p style='color:#8B0000'>#{error}!</p>" %>
+  <% end %>
+<% end %>
