@@ -6,14 +6,26 @@ end
 
 post '/users' do
   user = User.new(params)
+  user.password = params[:password_hash]
   user.save
+  session[:user_id] = user.id
   redirect '/'
+end
+
+
+delete "/users/:id" do
+  User.find_by(id: params[:id]).destroy
+  redirect "/"
 end
 
 #edit
 get '/users/:username/edit' do
-  @user = User.find_by(username: params[:username])
-  erb :'users/edit'
+  if logged_in?
+    @user = User.find_by(username: params[:username])
+    erb :'users/edit'
+  else
+    'quit trying to edit someone elses page!'
+  end
 end
 
 put '/users/:id' do
@@ -23,18 +35,30 @@ put '/users/:id' do
   redirect '/'
 end
 
+#show
 get "/users/:username" do
   @user = User.find_by(username: params[:username])
   erb :"/users/show"
 end
 
-#destroy
-# delete my account
-# redirect to homepage
+get '/logout' do
+  session.clear
+  redirect '/'
+end
 
+# sign in
+# new
 
-# sessions/destroy
-# /logout
+get '/login' do
+  erb :'/sessions/new'
+end
 
-# sessions/new
-#/login
+post '/login' do
+  user = User.find_by(username: params[:username])
+  if user && user.password == params[:password_hash]
+    session[:user_id] = user.id
+  else
+    'something went wrong. implement error handling'
+  end
+  redirect '/'
+end
