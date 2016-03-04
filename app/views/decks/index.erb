@@ -1,6 +1,12 @@
 <div>
   <% @decks.each do |deck| %>
-  <a href="/deck/<%=deck.id %>" class="deck_links"> <%= deck.name %> </a>
+  <p> <%= deck.name %> </p>
+
+<form method="POST" action="/games">
+  <input type="hidden" name="deck_id" value="<%=deck.id %>">
+  <input type="submit" value="Play">
+</form>
+
   <% end %>
 
 </div>
