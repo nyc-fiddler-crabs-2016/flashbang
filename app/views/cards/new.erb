@@ -1,0 +1,18 @@
+<% if logged_in?%>
+<h2>Create a Card</h2>
+
+<div>
+  <p>"If you are done adding cards to this deck click here to play a deck:
+<a href="/">Done</a></p>
+
+  <p>Click here to view your deck</p>
+</div>
+
+<form class = "create_new_card_form" method="POST" action="/cards">
+  <label> Question:</label><br>
+  <input type="text" name="card[:question]"><br /><br />
+  <label> Answer:</label><br>
+  <input type="text" name="card[:answer]"><br /><br />
+  <input type="submit" value="Create Deck">
+</form>
+<%end%>
