@@ -5,26 +5,28 @@
 # guess = Guess.create(game_id: game.id, card_id: card.id)
 
 
-user_amount = 4
+# user_amount = 4
 deck_names = ['HTML FUN', 'Web word']
 
 
-user_amount.times do
-  User.create(username: Faker::Internet.user_name, email: Faker::Internet.free_email  , password_hash: Faker::Internet.password )
-end
+# user_amount.times do
+#   user = User.new(username: Faker::Internet.user_name, email: Faker::Internet.free_email, password_hash: Faker::Internet.password )
+#   user.password = Faker::Internet.password
+#   user.save
+# end
 
 
 deck_names.each do |name|
   Deck.create(name: name)
 end
 
-users = User.all
-user_ids = users.map {|user| user.id}
+# users = User.all
+# user_ids = users.map {|user| user.id}
 
 decks = Deck.all
 deck_ids = decks.map {|deck| deck.id}
 
-Game.create(user_id: user_ids.sample, deck_id: deck_ids.sample)
+#Game.create(user_id: user_ids.sample, deck_id: deck_ids.sample)
 
 
 

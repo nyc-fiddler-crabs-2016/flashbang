@@ -2,10 +2,10 @@
   <% @decks.each do |deck| %>
   <p> <%= deck.name %> </p>
 
-<form method="POST" action="/games">
-  <input type="hidden" name="deck_id" value="<%=deck.id %>">
-  <input type="submit" value="Play">
-</form>
+  <form method="POST" action="/games">
+    <input type="hidden" name="deck_id" value="<%=deck.id %>">
+    <input type="submit" value="Play">
+  </form>
 
   <% end %>
 

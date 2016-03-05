@@ -5,6 +5,22 @@ class Game < ActiveRecord::Base
   has_many :guesses
   has_many :cards, through: :deck
 
+
+  def grab_card
+    self.cards.sample
+  end
+
+  def available_cards_collection
+    true_guesses = self.guesses.where(status: true)
+    unavailable_cards = []
+    true_guesses.each do |guess|
+       unavailable_cards << Card.find(guess.card_id)
+    end
+    self.cards - unavailable_cards
+  end
+
+
+
   def total_guesses
     self.guesses.count
   end

@@ -8,10 +8,7 @@ class Deck < ActiveRecord::Base
 
   def still_incorrect_cards
     guesses = Guess.where(status: false)
-
-
     Card.where()
-
   end
 
 end
