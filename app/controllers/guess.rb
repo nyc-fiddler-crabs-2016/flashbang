@@ -7,7 +7,8 @@ post '/guesses' do
 
   if game.game_over?
     session[:previous_guess] = nil
-    redirect '/'
+    @game = Game.find(params[:game_id])
+    erb :'games/_game_stats'
   else
     redirect "/games/#{params[:game_id]}"
   end

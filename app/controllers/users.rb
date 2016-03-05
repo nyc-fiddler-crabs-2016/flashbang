@@ -55,6 +55,7 @@ end
 #show
 get "/users/:username" do
   @user = User.find_by(username: params[:username])
+  @games = Game.where(user_id: @user.id)
   erb :"/users/show"
 end
 

@@ -29,14 +29,17 @@ class Game < ActiveRecord::Base
     self.guesses.count
   end
 
-   def total_correct_guesses
+  def total_correct_guesses
     self.guesses.where(status: true).count
   end
 
-
-
   def correct_first_try
-    #Guesses where(status:true) && Guess.card_id
+    array_of_card_ids = self.guesses.pluck(:card_id)
+    array_of_card_ids.find_all { |x| array_of_card_ids.count(x) == 1 }
+  end
+
+  def amount_correct_on_first_try
+    correct_first_try.length
   end
 
 end
