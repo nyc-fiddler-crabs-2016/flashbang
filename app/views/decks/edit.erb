@@ -1,0 +1,7 @@
+<h2>Edit Deck</h2>
+
+<form method="POST" action="/decks/<%= @deck.id %>">
+  <input type="hidden" name="_method" value="put">
+  <input type="text" name="name" value="<%=@deck.name%>">
+  <input type="submit" value="Edit Deck Name">
+</form>

@@ -1,13 +1,22 @@
 <div>
   <h2><%= @deck.name %>!</h2>
 
-  <a href="/decks/<%=@deck.id %>" class="deck_links"> <%= @deck.name %> </a>
+
 
   <%@deck.cards.each do |card|%>
     <p><%=card.question%><br>
     <%=card.answer%></p>
   <%end%>
 </div>
+
+
+
+  <div><a href="/decks/<%=@deck.id%>/edit" class="deck_links">Edit This Deck </a><br>
+    <form method="POST" action="/decks">
+      <input type="submit" value="Delete Deck" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+    </form>
+  </div>
+
 
 <div class="deck_stats">
 <!-- List stats for all games played of this deck by all users -->

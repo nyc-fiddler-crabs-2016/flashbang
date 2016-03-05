@@ -6,7 +6,7 @@
 <a href="/">Done</a></p>
 
   <p>Click here to view your deck:<br>
-    <a href="/decks/#{@deck.id}"> <%=@deck.name%></a></p>
+    <a href="/decks/<%=@deck.id%>"> <%=@deck.name%></a></p>
 </div>
 
 <form class = "create_new_card_form" method="POST" action="/cards">
