@@ -1,16 +1,15 @@
 <div>
   <h2><%= @deck.name %>!</h2>
-  <h2><%= @deck.description %>!</h2>
 
-  <a href="/deck/<%=deck.id %>" class="deck_links"> <%= deck.name %> </a>
+  <a href="/decks/<%=@deck.id %>" class="deck_links"> <%= @deck.name %> </a>
 
-
+  <%@deck.cards.each do |card|%>
+    <p><%=card.question%><br>
+    <%=card.answer%></p>
+  <%end%>
 </div>
 
+<div class="deck_stats">
+<!-- List stats for all games played of this deck by all users -->
+  </div>
 
-  <form class="pure-form pure-form-stacked" method="POST" action="/entries/<%= @entry.id %>">
-    <input type="hidden" name="_method"  value="PUT">
-    <input type="text" name="entry[title]" placeholder="Title" value="<%= @entry.title %>">
-    <input type="text" name ="entry[body]" placeholder="Body" value="<%= @entry.body %>">
-    <input type="submit" value="Save Entry" class="pure-button pure-button-primary">
-  </form>
