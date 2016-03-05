@@ -4,7 +4,16 @@
 post '/games' do
   session[:previous_guess] = nil
   @game = Game.create(user_id: session[:user_id], deck_id: params[:deck_id])
-  redirect "/games/#{@game.id}"
+    if @game.cards.empty?
+      if @game.deck
+        @game.deck.destroy
+      end
+    @game.destroy
+    @error = "You can't play a game with an empty deck yo"
+    erb :'/index'
+  else
+    redirect "/games/#{@game.id}"
+  end
 end
 
 get '/games/:id' do

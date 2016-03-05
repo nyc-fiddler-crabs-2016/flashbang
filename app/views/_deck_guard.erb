@@ -1,0 +1,5 @@
+<% if Deck.deck_over_five_minutes_old? && Deck.last.cards.empty? %>
+  <% Deck.destroy_empty_decks %>
+  <% @error = "Can't get around trying to create an empty deck my man" %>
+  <% redirect '/' %>
+<% end %>

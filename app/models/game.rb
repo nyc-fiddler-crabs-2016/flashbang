@@ -20,7 +20,7 @@ class Game < ActiveRecord::Base
   end
 
   def game_over?
-    available_cards_collection.empty?
+    available_cards_collection.empty? || self.cards.nil?
   end
 
 
