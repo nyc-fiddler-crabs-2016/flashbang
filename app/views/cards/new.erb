@@ -10,10 +10,11 @@
 </div>
 
 <form class = "create_new_card_form" method="POST" action="/cards">
+  <input type="hidden" name="deck_id" value=<%=@deck.id%>><br /><br />
   <label> Question:</label><br>
-  <input type="text" name="card[:question]"><br /><br />
+  <input type="text" name="card[question]"><br /><br />
   <label> Answer:</label><br>
-  <input type="text" name="card[:answer]"><br /><br />
+  <input type="text" name="card[answer]"><br /><br />
   <input type="submit" value="Create Card">
 </form>
 <%end%>
