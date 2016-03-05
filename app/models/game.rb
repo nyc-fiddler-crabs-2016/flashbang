@@ -19,6 +19,10 @@ class Game < ActiveRecord::Base
     self.cards - unavailable_cards
   end
 
+  def game_over?
+    available_cards_collection.empty?
+  end
+
 
 
   def total_guesses
