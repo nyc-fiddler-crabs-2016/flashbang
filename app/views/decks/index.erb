@@ -1,17 +1,10 @@
-
-
-
-
-
 <div class="center">
   <% @decks.each do |deck| %>
   <div class="demo-card-square mdl-card mdl-shadow--2dp">
     <div class="mdl-card__title mdl-card--expand home-page-card" >
       <h2 class="mdl-card__title-text"><%= deck.name %></h2>
     </div>
-    <div class="mdl-card__supporting-text">
-      This is a good dog.
-    </div>
+
     <div class="mdl-card__actions mdl-card--border">
           <form method="POST" action="/games">
             <input type="hidden" name="deck_id" value="<%=deck.id %>">
@@ -21,8 +14,4 @@
   </div>
   <div style="height:50px; width:25px;"></div>
   <% end %>
-</div>
-
-<div class = "new_deck_link">
-  <a href="/decks/new">Create a Deck</a>
 </div>
