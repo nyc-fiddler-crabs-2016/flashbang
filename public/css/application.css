@@ -66,3 +66,15 @@ nav {
   margin-left: 40px;
   padding: 20px 0;
 }
+
+
+.demo-card-wide > .mdl-card__title {
+  color: #fff;
+  height: 176px;
+  background: url("../images/flashbang_banner.gif") center / cover;
+}
+
+.home-page-card {
+    background: url('../images/Smiley.png') right 15% no-repeat ##00BCD4;
+    height: 165px;
+}

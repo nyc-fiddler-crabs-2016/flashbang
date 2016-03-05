@@ -1,8 +1,20 @@
-<h2>Great round playing <%= @game.deck.name %>!</h2>
-<h2>You made <%= @game.total_guesses %> total guesses </h2>
-<h2>You got <%= @game.amount_correct_on_first_try %> correct on the first try! </h2>
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h4 class="mdl-card__title-text">Great round on: <%= @game.deck.name %>! </h4>
+  </div>
+  <div class="mdl-card__supporting-text">
+    <h6>You got <%= @game.amount_correct_on_first_try %> correct on the first try! </h6>
+    <h6>You made <%= @game.total_guesses %> total guesses </h6>
 
-<h3><a href="/">Play Again?</a></h3>
-
-
-
+  </div>
+  <div class="mdl-card__actions mdl-card--border">
+    <a href="/" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+      PLAY ANOTHER ROUND
+    </a>
+  </div>
+  <div class="mdl-card__menu">
+    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+      <i class="material-icons">share</i>
+    </button>
+  </div>
+</div>
