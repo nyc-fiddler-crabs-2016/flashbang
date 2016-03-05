@@ -1,6 +1,6 @@
 #  List all our decks
 
-get '/decks' do
+get '/' do
   @decks = Deck.all
   erb :'decks/index'
 end

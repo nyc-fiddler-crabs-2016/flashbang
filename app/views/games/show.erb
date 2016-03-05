@@ -1,9 +1,33 @@
-<p>Question: <%= @card.question %></p>
-<p>Answer: <%= @card.answer %></p>
 
-<form method="post" action="/guesses">
-  <input type="text" name="guess" placeholder="What's the answer?" >
-  <input type="hidden" name="game_id" value="<%=@game.id %>">
-  <input type="hidden" name="card_id" value="<%=@card.id %>">
-  <input type="submit" value="Submit Guess">
-</form>
+
+
+<div class="center">
+  <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">Question:</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      <p><%= @card.question %></p>
+    </div>
+
+    <form method="post" action="/guesses">
+      <div class="mdl-textfield textfield mdl-js-textfield">
+        <input type="hidden" name="game_id" value="<%=@game.id %>">
+        <input type="hidden" name="card_id" value="<%=@card.id %>">
+        <input class="mdl-textfield__input" type="text" name="guess" id="sample1">
+        <label class="mdl-textfield__label" for="sample1">Answer: <%= @card.answer %></label>
+      </div>
+
+      <div class="mdl-card__actions mdl-card--border">
+        <input type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="margin-left:15px;" value="Submit Guess">
+      </div>
+
+
+  </form>
+
+
+
+  </div>
+</div>
+
+

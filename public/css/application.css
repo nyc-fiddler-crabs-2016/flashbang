@@ -1,7 +1,13 @@
 .container {
-  width: 960px;
+  width: 640px;
   margin: 0 auto;
-  border: 1px dotted #999;
+  border: 0px dotted #999;
+}
+
+.center {
+  margin: 20px auto;
+  border: 0px solid red;
+  width: 350px;
 }
 
 nav {
@@ -45,3 +51,12 @@ nav {
  nav ul.right {
    margin-right: 50px;
  }
+
+.textfield {
+  font-size: 16px;
+  /*box-sizing: border-box;*/
+  width: 250px;
+  max-width: 100%;
+  margin-left: 40px;
+  padding: 20px 0;
+}

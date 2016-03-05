@@ -1,3 +1,7 @@
+<% if @no_access %>
+  <h2><%= @no_access %></h2>
+<% end %>
+
 <div>
   <% @decks.each do |deck| %>
   <p> <%= deck.name %> </p>
