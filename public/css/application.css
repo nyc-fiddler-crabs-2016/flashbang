@@ -4,6 +4,11 @@
   border: 0px dotted #999;
 }
 
+.home-page-card {
+  background: url('https://www.getmdl.io/assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+  height: 165px;
+}
+
 .center {
   margin: 20px auto;
   border: 0px solid red;
