@@ -1,5 +1,8 @@
-<%@cards.each do |card|%>
+<p>Question: <%= @card.question %></p>
 
-
-<%end%>
-<%end%>
+<form method="post" action="/guesses">
+  <input type="text" name="guess" placeholder="What's the answer?" >
+  <input type="hidden" name="game_id" value="<%=@game.id %>">
+  <input type="hidden" name="card_id" value="<%=@card.id %>">
+  <input type="submit" value="Submit Guess">
+</form>
