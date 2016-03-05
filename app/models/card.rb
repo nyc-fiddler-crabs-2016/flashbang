@@ -7,7 +7,7 @@ class Card < ActiveRecord::Base
   has_many :guesses
   has_many :games, through: :decks
 
-  def self.guess_correct?(guess)
+  def guess_correct?(guess)
     guess.downcase.strip.chomp == self.answer.downcase.strip.chomp
   end
 
