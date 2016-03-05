@@ -1,0 +1,10 @@
+<% if logged_in?%>
+<h2>Create a New Deck</h2>
+<form class = "create_new_deck_form" method="POST" action="/decks">
+
+  <label> Deck Name:</label>
+    <br><input type="text" name="name"><br /><br />
+  <input type="submit" value="Create Deck">
+</form>
+
+<%end%>

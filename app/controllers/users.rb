@@ -74,8 +74,9 @@ post '/login' do
   user = User.find_by(username: params[:username])
   if user && user.password == params[:password_hash]
     session[:user_id] = user.id
+    redirect '/'
   else
-    'something went wrong. implement error handling'
+    @error = "something went wrong. please try again"
+    erb :'/sessions/new'
   end
-  redirect '/'
 end
