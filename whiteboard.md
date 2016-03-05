@@ -20,10 +20,13 @@ A user gets fed cards from deck at random
 A user enters an answer
 A user is told they are correct or incorrect, given answer.
 Incorrect cards are fed again until deck is finished thus ending the game.
-Game ending sends to stats page. 
+Game ending sends to stats page.
 
 STATS--
 Rounds for each deck stats (name of deck)
   Date played
   number of cards answered correctlyon first guess
   total number of guesses overall
+
+-I tried to add this authentication to the deck show page to prevent anybody that isn't the deck's creator from deleting the deck - only decks don't have user_ids
+<% if logged_in? && current_user.id == @deck.user_id%>
