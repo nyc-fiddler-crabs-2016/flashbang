@@ -11,7 +11,7 @@
       <div class="mdl-textfield textfield mdl-js-textfield">
         <input type="hidden" name="game_id" value="<%=@game.id %>">
         <input type="hidden" name="card_id" value="<%=@card.id %>">
-        <input class="mdl-textfield__input" type="text" name="guess" id="sample1">
+        <input class="mdl-textfield__input" autofocus type="text" name="guess" id="sample1">
         <label class="mdl-textfield__label" for="sample1">Answer: <%= @card.answer %></label>
       </div>
 
@@ -19,10 +19,16 @@
         <input type="submit" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" style="margin-left:15px;" value="Submit Guess">
       </div>
   </form>
-
-
-
   </div>
+
+  <% if @previous_guess %>
+  <br />
+  <br />
+  <br />
+    <%= erb :'games/_result' %>
+  <% end %>
+
+
 </div>
 
 

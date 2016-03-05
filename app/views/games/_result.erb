@@ -1,0 +1,14 @@
+<div class="demo-card-wide mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Previous Result: <%= @previous_guess.correct? %></h2>
+  </div>
+
+    <div class="mdl-card__supporting-text">
+      <p><p><%= @previous_guess.card.question %></p></p>
+    </div>
+
+    <div class="mdl-card__actions mdl-card--border">
+      <p>Answer: <%= @previous_guess.card.answer %></p>
+    </div>
+
+</div>
